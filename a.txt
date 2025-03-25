@@ -1,0 +1,28 @@
+1. FE, BE:
+2. Client - Server architecture: 
+request - respond
+Client: đưa ra request và nhận về respond
+Server: nhận request và đưa ra respond
+3. HTTP/HTTPS protocol: giao thức kết nối Client và Server
+Hyper Text Transfer protocol Secure
+Sự khác nhau:
+HTTPS an toàn hơn HTTP, dữ liệu được mã hóa, chỉ có Client và Server hiểu 
+HTTP: Port 80, HTTPS: Port 443
+Port: cổng truyền thông tin, mọi request từ Client sang Server phải đi qua Port
+giao thức mã hóa: TLS/SSL
+https = http + tls/ssl
+4. http request structure: 
+- http request: method, path, version of protocol, header, body
+patch: chứa địa chỉ request
+header: chứa các thông tin gửi lên request
+body: văn bản, json
+- http methods: CRUD post, get, put, patch, delete (chi tiết từng loại, so sánh) chỉ có get là không có body 
+5. http respond structure: version of protocol, status code, status message, header, body
+header: chứa các thông tin gửi lên request
+6. node.js: môi trường chạy js
+7. express.js: framework để xây dựng web cho node.js
+8. công cụ quản lý package cho node.js: npm, yarn, pnpm
+9. API overview
+Note: API không phải là protocol
+
+HW: status code, authorization: 
