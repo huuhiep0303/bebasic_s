@@ -1,0 +1,32 @@
+query parameter:
+- sau dấu ? ở URL, bao gồm cặp key-value
+- tách nhiều giá trị bằng &
+- thêm thông tin để lọc, sắp xếp
+- có thể thêm, bớt, thay đổi
+- giá trị tham số không thay đổi tài nguyên, chỉ thay đổi cách hiển thị
+- URL dài, khó hiểu
+- không bắt buộc, có thể bỏ qua, Optional
+- không truyền value thì default = rỗng
+
+path parameter: 
+- là 1 phần của URL
+- tách nhiều giá trị bằng /
+- chỉ định tài nguyên cụ thể 
+- cố định, không thể thay đổi
+- giá trị tham số thay đổi trực tiếp tài nguyên
+- URL ngắn gọn
+- bắt buộc để xác định tài nguyên
+- truyền đủ tham số
+
+cách 1: thêm file babelrc, xóa type
+cách 2: thêm type: "module" vào package.json sau main, xóa babelrc 
+
+post('/users')
+get('/users')
+get('users/:id')
+put(':id')
+delete(':id')
+
+Lưu dữ liệu vào file để không mất dữ liệu sau mỗi lần tắt chương trình: fs(file system) module
+
+HW: different from import and require 
