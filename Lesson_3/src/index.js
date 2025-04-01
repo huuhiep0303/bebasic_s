@@ -12,9 +12,9 @@ let Users = [
     { id: 3, name: 'Jane OOo', age: 22 },
 ]
 
-// app.get('/users', (req, res) => {
-//     res.json(Users)
-// })
+app.get('/users', (req, res) => {
+    res.json(Users)
+})
 
 // app.get('/users', (req, res) => {
 //     res.send(Users)
@@ -34,10 +34,10 @@ let Users = [
 //     res.send(foundUser)
 // })
 
-app.delete('/users/:id', (req, res) => {
-    Users = Users.filter((user) => user.id !== parseInt(req.params.id)) 
-    res.send("Deleted")
-})
+// app.delete('/users/:id', (req, res) => {
+//     Users = Users.filter((user) => user.id !== parseInt(req.params.id)) 
+//     res.send("Deleted")
+// })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
