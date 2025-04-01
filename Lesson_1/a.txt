@@ -1,28 +1,92 @@
 1. FE, BE:
-2. Client - Server architecture: 
-request - respond
+Frontend là những gì người dùng nhìn thấy và bao gồm các phần tử trực quan như nút, hộp kiểm, đồ họa và thông điệp văn bản. Frontend cho phép người dùng tương tác với ứng dụng của bạn. Backend là dữ liệu và cơ sở hạ tầng giúp ứng dụng của bạn hoạt động. Backend lưu trữ và xử lý dữ liệu ứng dụng cho người dùng của bạn.
+
+2. Client - Server architecture:  request - respond
 Client: đưa ra request và nhận về respond
 Server: nhận request và đưa ra respond
+
 3. HTTP/HTTPS protocol: giao thức kết nối Client và Server
 Hyper Text Transfer protocol Secure
 Sự khác nhau:
-HTTPS an toàn hơn HTTP, dữ liệu được mã hóa, chỉ có Client và Server hiểu 
-HTTP: Port 80, HTTPS: Port 443
-Port: cổng truyền thông tin, mọi request từ Client sang Server phải đi qua Port
+- HTTPS an toàn hơn HTTP, dữ liệu được mã hóa, chỉ có Client và Server hiểu 
+- HTTP: Port 80, HTTPS: Port 443
+Port: cổng truyền thông tin, mọi request từ Client sang Server phải đi qua Port (port number: TCP, UDP)
+80 - HTTP, 443 - HTTPS, 3306 - MySQL, 5432 - PostgreSQL, 27017 - MongoDB
 giao thức mã hóa: TLS/SSL
 https = http + tls/ssl
+
 4. http request structure: 
 - http request: method, path, version of protocol, header, body
-patch: chứa địa chỉ request
-header: chứa các thông tin gửi lên request
+path: chứa địa chỉ request
+header: chứa các thông tin (content type, authentication) gửi lên request
 body: văn bản, json
 - http methods: CRUD post, get, put, patch, delete (chi tiết từng loại, so sánh) chỉ có get là không có body 
+
 5. http respond structure: version of protocol, status code, status message, header, body
 header: chứa các thông tin gửi lên request
+
 6. node.js: môi trường chạy js
 7. express.js: framework để xây dựng web cho node.js
-8. công cụ quản lý package cho node.js: npm, yarn, pnpm
+8. công cụ quản lý package (tự động hóa quá trình cài đặt, cập nhật và quản lý các thư viện bên ngoài (packages) trong một dự án) cho node.js: 
+npm(node package manager) : cài đặt tuần tự, tốn dung lượng, bảo mật thấp
+yarn: tải song song, ofline, quản lý thông minh, các gói bị sao chép vào từng thư mục node_modules
+pnpm(Performant npm): cập nhật thông minh, tiết kiệm dung lượng đĩa và tăng tốc độ xử lý, lưu các gói toàn cục trên máy
+bun, deno, ..
+
 9. API overview
 Note: API không phải là protocol
 
 HW: status code, authorization, postman, expressjs structure (expressjs.com) 
+
+- status code: mã trạng thái trả về sau mỗi lần gửi request
+1xx (Informational – Thông tin): thông báo với client rằng server đã nhận được request. ít được sử dụng.
+100 Continue: server đã nhận req, tiếp tục gửi req
+
+2xx (Sucess – Thành công): request được server xử lý thành công.
+200 OK: Request thành công.
+201 Created: Đã tạo tài nguyên mới thành công.
+202
+204 No Content: Thành công nhưng không có dữ liệu trả về.
+
+3xx (Redirect – Chuyển hướng): server sẽ chuyển tiếp request hiện tại sang một request khác và client cần thực hiện việc gửi request tiếp theo đó để có thể hoàn tất. Thông thường khi trình duyệt nhận được status code loại này nó sẽ tự động thực hiện việc gửi request tiếp theo để lấy về kết quả
+301 Moved Permanently: URL đã thay đổi vĩnh viễn.
+302 Found: URL tạm thời thay đổi.
+304 Not Modified: Dữ liệu chưa thay đổi, dùng lại cache.
+
+4xx (Client error – Lỗi Client): có lỗi từ phía client trong khi gửi request. Ví dụ như sai URL, sai HTTP method, không có quyền truy cập 
+400 Bad Request: Request không hợp lệ.
+401 Unauthorized: Chưa xác thực.
+403 Forbidden: Không có quyền truy cập.
+404 Not Found: Không tìm thấy tài nguyên.
+405 
+
+5xx (Server error – Lỗi Server): có lỗi từ phía server trong khi xử lý request. Ví dụ như server quá tải, hết bộ nhớ, lỗi kết nối database…
+500 Internal Server Error: Lỗi server chung.
+502 Bad Gateway: Server trung gian nhận phản hồi lỗi.
+503 Service Unavailable: Server quá tải hoặc đang bảo trì.
+
+- authorization (phân quyền):
+- authentication (xác thực): single factor, two-factor, multi-factor
+
+Postman: công cụ API client phổ biến, giúp lập trình viên và tester thiết kế, thử nghiệm, kiểm thử (testing), và quản lý API một cách hiệu quả. Nó hỗ trợ gửi request đến API, xem phản hồi (response), kiểm tra lỗi, và tự động hóa quy trình kiểm thử API.
+Postman hỗ trợ tất cả các phương thức HTTP (GET, POST, PUT, PATCH, DELETE, …).
+- Gửi HTTP requests (GET, POST, PUT, DELETE).
+- Hỗ trợ Authorization (API Key, OAuth, JWT...).
+- Kiểm thử API với Tests & Assertions.
+- Mock Server để kiểm tra API mà không cần backend thực.
+- Collections để quản lý nhiều API dễ dàng.
+
+SSR (Server-Side Rendering): phương pháp render trang web trên server trước khi gửi HTML đến client. framework: nextjs, nuxtjs
+
+CSR (Client-Side Rendering): trình duyệt tải một file HTML rỗng, sau đó JavaScript sẽ tự động render nội dung trên client. Dữ liệu thường được tải thông qua API và hiển thị bằng JavaScript. framework: vue, angular, react
+
+IP (Internet Protocol Address): một địa chỉ logic duy nhất được gán cho mỗi thiết bị, được sử dụng trong giao thức IP của lớp Internet thuộc mô hình TCP/IP (địa chỉ nhà trên Internet)
+
+REST (Representational State Transfer): là một dạng chuyển đổi cấu trúc dữ liệu, một kiểu kiến trúc để viết API. 
+là một kiến trúc phần mềm cho phép các hệ thống giao tiếp với nhau một cách hiệu quả. được thiết kế dựa trên các nguyên tắc đơn giản như việc sử dụng HTTP và URL để xác định resources (tài nguyên) và sử dụng các phương thức HTTP (như GET, POST, PUT, DELETE)
+nguyên tắc: Stateless, Client-Server Architecture, Cacheable, Uniform Interface, Layered System
+
+RESTful API là một kiểu API được thiết kế theo các nguyên tắc của kiến trúc REST. RESTful API sử dụng giao thức HTTP để truyền tải dữ liệu giữa client và serve. dễ sử dụng, dễ hiểu, dễ mở rộng, tương tác với nhiều dạng dữ liệu. URL đại diện cho tài nguyên
+
+
+

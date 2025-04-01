@@ -6,13 +6,14 @@ các lần tải trang sau sẽ chậm hơn, chuyển trang chậm vì phải up
 CSR: client gửi req lên server, server xử lý và trả về file html rỗng và các gói js, phía client tải các gói js để render ra trang html và hiển thị ra browser 
 ex: shopee
 thời gian tải trang lần đầu chậm hơn, khó tìm kiếm SEO
-các lần tải sau nhanh hơn, update toàn bộ
+các lần tải sau nhanh hơn, update những gì cần 
 - một trang web có thể vừa sử dụng ssr và csr
 - các cách khác: SSG, RCS, ...
 
 REST: tập hợp các nguyên tắc để viết API đơn giản, dễ dàng, hiệu quả và dễ mở rộng
 chức năng quan trọng nhất: quy định cách sử dụng các method và URI 
 RESTful API: API tuân theo nguyên tắc của REST (6 principles) Stateless, Client-Server Architecture, Cacheable, Uniform Interface, Layered System, Code on Demand (Optional)
+Web api: api đặc thù dùng cho web
 
 Status code: 1xx, 2xx, 3xx, 4xx, 5xx
 
@@ -24,13 +25,14 @@ Local host: địa chỉ loopback 127.0.0.1, tự chỉ về chính mình
 
 Port: cổng truyền thông tin, máy tính có thể có nhiều port tương ứng với nhiều dịch vụ khác nhau 
 trong 1 thời điểm, 1 port chỉ được sử dụng cho 1 dịch vụ, trường hợp có 2 dịch vụ cùng sử dụng 1 port thì sẽ có 1 port không thể thực hiện 
-
 Note: Tên miền các trang web không có port là nhờ có http có port 80 và https có port 443
 
 Sự khác biệt giữa package.json và package-lock.json 
 
-Cài đặt các dependency trong dự án: npm ci,
+Cài đặt các dependency trong dự án: npm ci, ...
 
 APIdog: tương tự như postman
+
+Routing
 
 HW: param, authorization, body in postman 
