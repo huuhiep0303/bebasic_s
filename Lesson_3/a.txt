@@ -30,3 +30,16 @@ delete(':id')
 Lưu dữ liệu vào file để không mất dữ liệu sau mỗi lần tắt chương trình: fs(file system) module
 
 HW: different from import and require 
+require: require-module.exports, cú pháp của CommonJS (CJS) - hệ thống module mặc định trong nodejs. đồng bộ và chạy lập tức khi được gọi. không hỗ trợ es6. import trực tiếp file json. có thể gọi ở bất kỳ đâu trong chương trình
+require() là một hàm tích hợp để bao gồm các mô-đun bên ngoài tồn tại trong các tệp riêng biệt. Câu lệnh require() về cơ bản sẽ đọc tệp JavaScript, thực thi tệp đó và sau đó tiến hành trả về đối tượng xuất.
+
+import: import-export, cú pháp của es modules (ESM) - hệ thống module mới, chuẩn es6+, hỗ trợ bất đồng bộ, có hoisting, tăng cường khả năng tối ưu hóa, cần có type: "module" vào package.json để được hỗ trợ trong nodejs. sử dụng file json thông qua file system. được gọi ở đầu chương trình với import tĩnh
+
+Một trong những điểm khác biệt giữa require và import là require được dùng để tải các mô-đun trong Node.js, trong khi import được dùng để nhập các mô-đun trong JavaScript.
+Một điểm khác biệt quan trọng nữa là require trả về một đối tượng, trong khi import trả về một tham chiếu đến mô-đun.
+Điều này có nghĩa là khi bạn sử dụng require, bạn có thể gán lệnh return cho một biến và sử dụng biến đó để truy cập các thuộc tính và phương thức của mô-đun.
+Với import, bạn cần truy cập trực tiếp vào các thuộc tính và phương thức của mô-đun được import, nói tóm lại, require được dùng để tải các mô-đun trong Node.js và là một hàm tích hợp, trong khi import được dùng để nhập các mô-đun trong JavaScript và là một từ khóa từ ECMAScript 6 và không được Node.js hỗ trợ gốc.
+
+các hệ thống module trong nodejs khác nhau ở cách thực thi
+
+Middleware:

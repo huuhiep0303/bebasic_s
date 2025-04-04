@@ -1,0 +1,12 @@
+Require(), default in nodejs 
+
+Import: dynamic import and static import , type = module 
+
+Middleware: function
+- thay đổi các đối tượng req, res
+- kết thúc 1 quá trình req, res
+- gọi hàm Middleware tiếp theo trong stack
+
+4 loại Middleware trong express:
+
+Tạo nhánh dev, các nhánh khác chứa các bài học của mỗi buổi

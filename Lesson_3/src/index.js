@@ -1,4 +1,3 @@
-import { error } from 'console'
 import express from 'express'
 import fs from 'fs'
 
@@ -6,7 +5,7 @@ const dataFile = 'data.json'
 
 
 // const express = require('express')
-const app = express()
+const app = express() 
 const port = 3000
 
 app.use(express.json())
@@ -110,6 +109,8 @@ app.put('/users/:id', (req, res) => {
     })
   })
 })
+
+// Thiếu get a user, nên viết đọc và ghi file thành 2 hàm riêng, sử dụng try catch để xử lý lỗi trong các method
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
